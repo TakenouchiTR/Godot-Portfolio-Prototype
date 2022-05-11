@@ -3,15 +3,15 @@
 name: CI
 
 env:
-  GODOT_VERSION: 3.3.3
+  GODOT_VERSION: 3.4.4
   
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -46,7 +46,7 @@ jobs:
         run: |
           apt-get update && apt-get install -y rsync
       - name: Deploy to GitHub Pages 🚀
-        uses: TakenouchiTR/github-pages-deploy-action@releases/v3
+        uses: TakenouchiTR/Godot-Portfolio-Prototype@releases/v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: master # The branch the action should deploy to.
